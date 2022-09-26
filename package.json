@@ -2,7 +2,12 @@
   "name": "@m3rashid/dsa-js",
   "version": "1.0.0",
   "description": "A data-structures and algorithms library for node and browser",
-  "main": "build/index.js",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "directories": {
+    "test": "tests"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/m3rashid/dsa-js.git"
@@ -12,13 +17,15 @@
   "bugs": {
     "url": "https://github.com/m3rashid/dsa-js/issues"
   },
-  "homepage": "https://github.com/m3rashid/dsa-js#readme",
+  "homepage": "https://m3rashid.github.io/dsa-js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "buildStart": "node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "cd docs && npm run build",
+    "deploy": "gh-pages -d ./docs/build",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
@@ -26,10 +33,10 @@
     "precommit": "lint-staged",
     "prepare": "husky install"
   },
-  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
@@ -49,10 +56,6 @@
     "*.json": [
       "prettier --write"
     ]
-  },
-  "types": "./build/index.d.ts",
-  "directories": {
-    "test": "tests"
   },
   "keywords": [
     "data",
