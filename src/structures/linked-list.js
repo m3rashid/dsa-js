@@ -209,18 +209,31 @@ class LinkedList {
 
 
 //sample code to test the linked list
-let list = new LinkedList();
-list.insertAtBeginning(1);
-list.insertAtBeginning(2);
+// let list = new LinkedList();
 
-list.insertAtEnd(5);
-list.insertAtEnd(6);
+// list.insertAtBeginning(1);
+// [1]
 
-list.insertAt(7, 2);
+// list.insertAtBeginning(2);
+// [2,1]
 
-list.removeFromBeginning();
+// list.insertAtEnd(5);
+// [2,1,5]
 
-list.printList();
+// list.insertAtEnd(6);
+// [2,1,5,6]
 
-list.reverse();
-list.printList();
+// list.insertAt(7, 2);
+// [2,1,7,5,6]
+
+// list.removeFromBeginning();
+// [1,7,5,6]
+
+// list.printList();
+// [2,7,5,6]
+
+// list.reverse();
+// [6,5,7,2]
+
+// list.printList();
+// [6,5,7,2]
