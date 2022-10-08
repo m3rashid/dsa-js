@@ -9,7 +9,7 @@ const config = {
   title: 'DSA Js',
   tagline: 'A data-structures and algorithms library for node and browser',
   url: 'https://m3rashid.github.io',
-  baseUrl: '/dsa-js/',
+  baseUrl: process.env.NODE_ENV === 'production' ? '/dsa-js/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
