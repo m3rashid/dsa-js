@@ -10,7 +10,7 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
-        this.size = 0;
+        this.s = 0;
     }
 
 
@@ -18,7 +18,7 @@ class LinkedList {
         let node = new Node(data);
         node.next = this.head;
         this.head = node;
-        this.size++;
+        this.s++;
 
         return true;
     }
@@ -34,7 +34,7 @@ class LinkedList {
 
         //add node
         current.next = node;
-        this.size++;
+        this.s++;
 
         return true;
     }
@@ -42,7 +42,7 @@ class LinkedList {
     insertAt(data, index) {
 
         //if index is out of range
-        if (index < 0 || index > this.size) {
+        if (index < 0 || index > this.s) {
             return false;
         }
 
@@ -68,7 +68,7 @@ class LinkedList {
         //insert node
         node.next = current;
         previous.next = node;
-        this.size++;
+        this.s++;
 
         return true;
     }
@@ -76,20 +76,20 @@ class LinkedList {
     removeFromBeginning() {
 
         //if list is empty
-        if (this.size === 0) {
+        if (this.s === 0) {
             return false;
         }
 
         //move head to next node
         this.head = this.head.next;
-        this.size--;
+        this.s--;
 
         return true;
     }
 
     removeFromEnd() {
         //if list is empty
-        if (this.size === 0) {
+        if (this.s === 0) {
             return false;
         }
         let current = this.head;
@@ -103,14 +103,14 @@ class LinkedList {
 
         //remove node
         previous.next = null;
-        this.size--;
+        this.s--;
 
         return true;
     }
 
     removeAt(index) {
         //if index is out of range
-        if (index < 0 || index >= this.size) {
+        if (index < 0 || index >= this.s) {
             return false;
         }
 
@@ -132,7 +132,7 @@ class LinkedList {
 
         //remove node
         previous.next = current.next;
-        this.size--;
+        this.s--;
 
         return true;
     }
@@ -169,11 +169,11 @@ class LinkedList {
     }
 
     isEmpty() {
-        return this.size === 0;
+        return this.s === 0;
     }
 
-    getSize() {
-        return this.size;
+    size() {
+        return this.s;
     }
 
     printList() {
