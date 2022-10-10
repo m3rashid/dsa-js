@@ -1,91 +1,149 @@
 //node of queue
 class Node {
-    constructor(data) {
-        this.data = data;
-        this.next = null;
-    }
+	constructor(data) {
+		this.data = data;
+		this.next = null;
+	}
 }
 
-//queue class
+/**
+ * @class
+ * @description
+ * Queue is a linear data structure which follows a particular order in which the operations are performed.
+ * The order is First In First Out (FIFO).
+ */
 class Queue {
-    constructor() {
-        //front and rear of queue
-        this.f = null;
-        this.r = null;
+	/**
+     * @constructor
+     */
+	constructor() {
+		//front and rear of queue
+		this.f = null;
+		this.r = null;
 
-        //size of queue
-        this.s = 0;
-    }
+		//size of queue
+		this.s = 0;
+	}
 
-    //function to add element into the queue
-    enqueue(data) {
-        let node = new Node(data);
+	/**
+     * 
+     * @param {Any} data Element to be inserted
+     * @returns {Boolean} true if the element is inserted successfully, else false.
+     * @description
+     * Inserts an element at the rear of the queue.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	enqueue(data) {
+		let node = new Node(data);
 
-        //first element
-        if (this.f === null) {
-            this.f = node;
-            this.r = node;
-        } else {
-            this.r.next = node;
-            this.r = node;
-        }
-        this.s++;
-        return true;
-    }
+		//first element
+		if (this.f === null) {
+			this.f = node;
+			this.r = node;
+		} else {
+			this.r.next = node;
+			this.r = node;
+		}
+		this.s++;
+		return true;
+	}
 
-    //function to remove element from the queue
-    dequeue() {
-        //if queue is empty
-        if (this.f === null) {
-            return false;
-        }
-        this.f = this.f.next;
-        this.s--;
-        return true;
-    }
+	/**
+     * 
+     * @returns {Boolean} true if the element is deleted successfully, else false.
+     * @description
+     * Deletes an element from the front of the queue.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	dequeue() {
+		//if queue is empty
+		if (this.f === null) {
+			return false;
+		}
+		this.f = this.f.next;
+		this.s--;
+		return true;
+	}
 
-    //function to get front element of the queue
-    front() {
-        //if queue is empty
-        if (this.f === null) {
-            return null;
-        }
-        return this.f.data;
-    }
+	/**
+     * 
+     * @returns {Any} The front element of the queue.
+     * @description
+     * Returns the front element of the queue.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	front() {
+		//if queue is empty
+		if (this.f === null) {
+			return null;
+		}
+		return this.f.data;
+	}
 
-    //function to get rear element of the queue
-    rear() {
-        //if queue is empty
-        if (this.r === null) {
-            return null;
-        }
-        return this.r.data;
-    }
+	/**
+     * 
+     * @returns {Any} The rear element of the queue.
+     * @description
+     * Returns the rear element of the queue.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	rear() {
+		//if queue is empty
+		if (this.r === null) {
+			return null;
+		}
+		return this.r.data;
+	}
 
-    //function to check if queue is empty
-    isEmpty() {
-        return this.s === 0;
-    }
+	/**
+     * 
+     * @returns {Boolean} true if the queue is empty, else false.
+     * @description
+     * Checks if the queue is empty.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	isEmpty() {
+		return this.s === 0;
+	}
 
-    //function to get size of the queue
-    size() {
-        return this.s;
-    }
+	/**
+     * 
+     * @returns {Number} The size of the queue.
+     * @description
+     * Returns the size of the queue.
+     * Time complexity: O(1)
+     * Space complexity: O(1)
+     */
+	size() {
+		return this.s;
+	}
 
-    //function to print queue
-    print() {
-        let current = this.f;
-        let str = '[';
-        while (current) {
-            str += current.data;
-            if (current.next) {
-                str += ', ';
-            }
-            current = current.next;
-        }
-        str += ']';
-        return str;
-    }
+	/**
+     * 
+     * @returns {String} The string representation of the queue.
+     * @description
+     * Returns the string representation of the queue.
+     * Time complexity: O(n)
+     * Space complexity: O(n)
+     */
+	print() {
+		let current = this.f;
+		let str = '[';
+		while (current) {
+			str += current.data;
+			if (current.next) {
+				str += ', ';
+			}
+			current = current.next;
+		}
+		str += ']';
+		return str;
+	}
 }
 
 //create a queue
