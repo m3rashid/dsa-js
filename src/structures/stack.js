@@ -1,76 +1,127 @@
 //node of stack
 class Node {
-    constructor(data) {
-        this.data = data;
-        this.next = null;
-    }
+	constructor(data) {
+		this.data = data
+		this.next = null
+	}
 }
 
-//stack class
+/**
+ * @class
+ * @description
+ * Stack is a linear data structure which follows a particular order in which the operations are performed.
+ * The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+ */
 class Stack {
-    constructor() {
-        //top of stack
-        this.top = null;
+	/**
+   * @constructor
+   */
+	constructor() {
+		//top of stack
+		this.top = null
 
-        //size of stack
-        this.s = 0;
-    }
+		//size of stack
+		this.s = 0
+	}
 
-    //function to push element into the stack
-    push(data) {
-        let node = new Node(data);
-        node.next = this.top;
-        this.top = node;
-        this.s++;
-        return true;
-    }
+	/**
+   *
+   * @param {Any} data Element to be inserted
+   * @returns {Boolean} true if the element is inserted successfully, else false.
+   * @description
+   * Inserts an element at the top of the stack.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	push(data) {
+		let node = new Node(data)
+		node.next = this.top
+		this.top = node
+		this.s++
+		return true
+	}
 
-    //function to pop element from the stack
-    pop() {
-        //if stack is empty
-        if (this.top === null) {
-            return false;
-        }
-        let data = this.top.data;
-        this.top = this.top.next;
-        this.s--;
+	/**
+   *
+   * @returns {Boolean} true if the element is deleted successfully, else false.
+   * @description
+   * Deletes an element from the top of the stack.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	pop() {
+		//if stack is empty
+		if (this.top === null) {
+			return false
+		}
+		let data = this.top.data
+		this.top = this.top.next
+		this.s--
 
-        return true
-    }
+		return true
+	}
 
-    //function to get top element of the stack
-    top() {
-        //if stack is empty
-        if (this.top === null) {
-            return null;
-        }
-        return this.top.data;
-    }
+	/**
+   *
+   * @returns {Any} top element of the stack
+   * @description
+   * Returns the top element of the stack.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	top() {
+		//if stack is empty
+		if (this.top === null) {
+			return null
+		}
+		return this.top.data
+	}
 
-    //function to check if stack is empty
-    isEmpty() {
-        return this.s === 0;
-    }
+	/**
+   *
+   * @returns {Boolean} true if the stack is empty, else false.
+   * @description
+   * Checks if the stack is empty.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	isEmpty() {
+		return this.s === 0
+	}
 
-    //function to get size of the stack
-    size() {
-        return this.s;
-    }
+	/**
+   *
+   * @returns {Number} size of the stack
+   * @description
+   * Returns the size of the stack.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	size() {
+		return this.s
+	}
 
-    //function to print stack
-    print() {
-        let current = this.top;
-        let str = '[';
-        while (current) {
-            str += current.data;
-            if (current.next) {
-                str += ', ';
-            }
-            current = current.next;
-        }
-        str += ']';
-        return str;
-    }
+	/**
+   *
+   * @returns {String} string representation of the stack
+   * @description
+   * Returns the string representation of the stack.
+   * Time complexity: O(n)
+   * Space complexity: O(n)
+   */
+	print() {
+		let current = this.top
+		let str = '['
+		while (current) {
+			str += current.data
+			if (current.next) {
+				str += ', '
+			}
+			current = current.next
+		}
+		str += ']'
+		return str
+	}
 }
 
 //sample code to test the stack

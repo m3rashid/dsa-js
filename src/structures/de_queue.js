@@ -1,136 +1,212 @@
 //node of double ended queue
 class Node {
-  constructor(data) {
-    this.data = data
-    this.next = null
-    this.prev = null
-  }
+	constructor(data) {
+		this.data = data
+		this.next = null
+		this.prev = null
+	}
 }
 
-//double ended queue class
+/**
+ * @class DeQueue
+ * @description
+ * A double ended queue is a queue that allows insertion and deletion from both the front and the rear.
+ * It is a linear data structure that follows the FIFO (First In First Out) principle.
+ * It is similar to a queue but with the ability to insert and delete elements from both the front and the rear.
+ * It is also known as a head-tail linked list.
+ */
 class DEQueue {
-  constructor() {
-    //front and rear of queue
-    this.head = null
-    this.tail = null
+	/**
+   * @constructor
+   */
+	constructor() {
+		//front and rear of queue
+		this.head = null
+		this.tail = null
 
-    //size of queue
-    this.length = 0
-  }
+		//size of queue
+		this.length = 0
+	}
 
-  //function for inserting element at front
-  enqueueFront(data) {
-    let node = new Node(data)
+	/**
+   *
+   * @param {Any} data the element to be inserted.
+   * @returns {Boolean} true if the element is inserted successfully, else false.
+   * @description
+   * Inserts an element at the front of the queue.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	enqueueFront(data) {
+		let node = new Node(data)
 
-    if (this.head === null) {
-      this.head = node
-      this.tail = node
-    } else {
-      this.head.prev = node
-      node.next = this.head
-      this.head = node
-    }
-    this.length++
-    return true
-  }
+		if (this.head === null) {
+			this.head = node
+			this.tail = node
+		} else {
+			this.head.prev = node
+			node.next = this.head
+			this.head = node
+		}
+		this.length++
+		return true
+	}
 
-  //function for inserting element at rear
-  enqueueRear(data) {
-    let node = new Node(data)
+	/**
+   *
+   * @param {Any} data the element to be inserted.
+   * @returns {Boolean} true if the element is inserted successfully, else false.
+   * @description
+   * Inserts an element at the rear of the queue.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	enqueueRear(data) {
+		let node = new Node(data)
 
-    if (this.tail === null) {
-      this.head = node
-      this.tail = node
-    } else {
-      this.tail.next = node
-      node.prev = this.tail
-      this.tail = node
-    }
-    this.length++
-    return true
-  }
+		if (this.tail === null) {
+			this.head = node
+			this.tail = node
+		} else {
+			this.tail.next = node
+			node.prev = this.tail
+			this.tail = node
+		}
+		this.length++
+		return true
+	}
 
-  //function to remove front element from the queue
-  dequeueFront() {
-    //if queue is empty
-    if (this.head === null) {
-      return false
-    }
-    this.head = this.head.next
-    this.length--
-    return true
-  }
+	/**
+   *
+   * @returns {Boolean} true if the element is removed successfully, else false.
+   * @description
+   * Removes an element from the front of the queue.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	dequeueFront() {
+		//if queue is empty
+		if (this.head === null) {
+			return false
+		}
+		this.head = this.head.next
+		this.length--
+		return true
+	}
 
-  //function to remove rear element from the queue
-  dequeueRear() {
-    //if queue is empty
-    if (this.tail === null) {
-      return false
-    }
-    this.tail = this.tail.prev
-    this.length--
-    return true
-  }
+	/**
+   *
+   * @returns {Boolean} true if the element is removed successfully, else false.
+   * @description
+   * Removes an element from the rear of the queue.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	dequeueRear() {
+		//if queue is empty
+		if (this.tail === null) {
+			return false
+		}
+		this.tail = this.tail.prev
+		this.length--
+		return true
+	}
 
-  //function to get front element of the queue
-  front() {
-    //if queue is empty
-    if (this.head === null) {
-      return null
-    }
-    return this.head.data
-  }
+	/**
+   *
+   * @returns {Any} the element at the front of the queue.
+   * @description
+   * Returns the element at the front of the queue. Returns null if the queue is empty.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	front() {
+		//if queue is empty
+		if (this.head === null) {
+			return null
+		}
+		return this.head.data
+	}
 
-  //function to get rear element of the queue
-  rear() {
-    //
-    if (this.tail === null) {
-      return null
-    }
-    return this.tail.data
-  }
+	/**
+   *
+   * @returns {Any} the element at the rear of the queue.
+   * @description
+   * Returns the element at the rear of the queue. Returns null if the queue is empty.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	rear() {
+		//
+		if (this.tail === null) {
+			return null
+		}
+		return this.tail.data
+	}
 
-  //function to check if queue is empty
-  isEmpty() {
-    return this.length === 0
-  }
+	/**
+   *
+   * @returns {Boolean} true if the queue is empty, else false.
+   * @description
+   * Checks if the queue is empty.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	isEmpty() {
+		return this.length === 0
+	}
 
-  //function to get size of the queue
-  size() {
-    return this.length
-  }
+	/**
+   *
+   * @returns {Number} the size of the queue.
+   * @description
+   * Returns the size of the queue.
+   * Time complexity: O(1)
+   * Space complexity: O(1)
+   */
+	size() {
+		return this.length
+	}
 
-  //function to reverse the queue
-  reverse() {
-    let current = this.head
-    let temp = null
+	/**
+   * @description
+   * function to reverse the queue
+   */
+	reverse() {
+		let current = this.head
+		let temp = null
 
-    //exchange next and prev for all nodes of the queue
-    while (current !== null) {
-      temp = current.prev
-      current.prev = current.next
-      current.next = temp
-      current = current.prev
-    }
-    if (temp !== null) {
-      this.head = temp.prev
-    }
-  }
+		//exchange next and prev for all nodes of the queue
+		while (current !== null) {
+			temp = current.prev
+			current.prev = current.next
+			current.next = temp
+			current = current.prev
+		}
+		if (temp !== null) {
+			this.head = temp.prev
+		}
+	}
 
-  //
-  print() {
-    let current = this.head
-    let result = '['
-    while (current) {
-      result += current.data
-      if (current.next) {
-        result += ','
-      }
-      current = current.next
-    }
-    result += ']'
-    return result
-  }
+	/**
+   *
+   * @returns {String} the string representation of the queue.
+   * @description
+   * Prints the whole queue.
+   */
+	print() {
+		let current = this.head
+		let result = '['
+		while (current) {
+			result += current.data
+			if (current.next) {
+				result += ','
+			}
+			current = current.next
+		}
+		result += ']'
+		return result
+	}
 }
 
 // //creating double ended queue
