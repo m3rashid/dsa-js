@@ -1,6 +1,6 @@
 {
 	"name": "@m3rashid/dsa-js",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A data-structures and algorithms library for node and browser written in typescript. Inspired from C++ standard library",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
@@ -20,6 +20,7 @@
 	"homepage": "https://m3rashid.github.io/dsa-js",
 	"scripts": {
 		"dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
+		"postinstall": "cd docs && yarn",
 		"start": "ts-node src/index.ts",
 		"build": "tsc",
 		"buildStart": "node build/index.js",
