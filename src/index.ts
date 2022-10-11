@@ -1,3 +1,7 @@
-export { default as strucures } from './structures';
+import strucures from './structures';
+import algorithms from './algorithms';
 
-export { default as algorithms } from './algorithms';
+export default {
+	...strucures,
+	...algorithms,
+};

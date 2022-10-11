@@ -1,7 +1,7 @@
 {
 	"name": "@m3rashid/dsa-js",
-	"version": "1.0.1",
-	"description": "A data-structures and algorithms library for node and browser",
+	"version": "1.0.2",
+	"description": "A data-structures and algorithms library for node and browser written in typescript. Inspired from C++ standard library",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",

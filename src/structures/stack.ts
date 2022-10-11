@@ -63,7 +63,7 @@ export class Stack<T> {
 
 //sample code to test the stack
 export const test = () => {
-	const stack = new Stack();
+	const stack = new Stack<number>();
 	stack.push(1); // [1]
 	stack.push(2); // [2, 1]
 	stack.push(3); // [3, 2, 1]
