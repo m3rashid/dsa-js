@@ -1,4 +1,3 @@
-// export all the modules from here
+export { default as strucures } from './structures';
 
-// sample code, just to test
-export const hello = (name: string) => `Hello ${name}!`
+export { default as algorithms } from './algorithms';

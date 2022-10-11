@@ -1,3 +1,30 @@
-// this folder contains the data structures used
+import { DoublyLinkedList, DoublyLinkedListNode } from './doubly-linked-list';
 
-// export all the contents of the structures folder from here
+import { LinkedList, LinkedListNode, test as LinkedListTest } from './linked-list';
+
+import { Queue, QueueNode, test as queueTest } from './queue';
+
+import { Stack, StackNode, test as stackTest } from './stack';
+
+const strucures = {
+	// doubly-linked-list
+	DoublyLinkedList,
+	DoublyLinkedListNode,
+
+	// linked-list
+	LinkedList,
+	LinkedListNode,
+	LinkedListTest,
+
+	// queue
+	Queue,
+	QueueNode,
+	queueTest,
+
+	// stack
+	Stack,
+	StackNode,
+	stackTest,
+};
+
+export default strucures;

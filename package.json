@@ -1,78 +1,79 @@
 {
-  "name": "@m3rashid/dsa-js",
-  "version": "1.0.1",
-  "description": "A data-structures and algorithms library for node and browser",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "directories": {
-    "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/m3rashid/dsa-js.git"
-  },
-  "author": "MD Rashid Hussain <m3rashid.hussain@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/m3rashid/dsa-js/issues"
-  },
-  "homepage": "https://m3rashid.github.io/dsa-js",
-  "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "buildStart": "node build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "cd docs && npm run build",
-    "deploy": "gh-pages -d ./docs/build",
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "precommit": "lint-staged",
-    "prepare": "husky install",
-    "pretonpm": "rm -rf dist || true && yarn build",
-    "tonpm": "node src/publish.js && cp README.md dist/",
-    "posttonpm": "cd dist && npm pack && npm publish m3rashid-dsa-js-*.tgz --access public && cd .. && rm -rf dist && npm run deploy"
-  },
-  "dependencies": {},
-  "peerDependencies": {},
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.0.1",
-    "gh-pages": "^4.0.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.3"
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint",
-      "prettier --write"
-    ],
-    "*.json": [
-      "prettier --write"
-    ]
-  },
-  "keywords": [
-    "data",
-    "structures",
-    "algorithms",
-    "js",
-    "javascript",
-    "dsa",
-    "algo",
-    "ts",
-    "typescript"
-  ]
+	"name": "@m3rashid/dsa-js",
+	"version": "1.0.1",
+	"description": "A data-structures and algorithms library for node and browser",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"directories": {
+		"test": "tests"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m3rashid/dsa-js.git"
+	},
+	"author": "MD Rashid Hussain <m3rashid.hussain@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/m3rashid/dsa-js/issues"
+	},
+	"homepage": "https://m3rashid.github.io/dsa-js",
+	"scripts": {
+		"dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
+		"start": "ts-node src/index.ts",
+		"build": "tsc",
+		"buildStart": "node build/index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"predeploy": "cd docs && npm run build",
+		"deploy": "gh-pages -d ./docs/build",
+		"format:check": "prettier --check .",
+		"format:write": "prettier --write .",
+		"lint:check": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"precommit": "lint-staged",
+		"prepare": "husky install",
+		"pretonpm": "rm -rf dist || true && yarn build",
+		"tonpm": "node src/publish.js && cp README.md dist/",
+		"posttonpm": "cd dist && npm pack && npm publish m3rashid-dsa-js-*.tgz --access public && cd .. && rm -rf dist && npm run deploy"
+	},
+	"dependencies": {},
+	"peerDependencies": {},
+	"devDependencies": {
+		"@types/node": "^18.8.4",
+		"@typescript-eslint/eslint-plugin": "^5.38.0",
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-standard-with-typescript": "^23.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.3.0",
+		"eslint-plugin-promise": "^6.0.1",
+		"gh-pages": "^4.0.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"ts-node": "^10.9.1",
+		"ts-node-dev": "^2.0.0",
+		"tsup": "^6.2.3",
+		"typescript": "^4.8.3"
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx}": [
+			"eslint",
+			"prettier --write"
+		],
+		"*.json": [
+			"prettier --write"
+		]
+	},
+	"keywords": [
+		"data",
+		"structures",
+		"algorithms",
+		"js",
+		"javascript",
+		"dsa",
+		"algo",
+		"ts",
+		"typescript"
+	]
 }

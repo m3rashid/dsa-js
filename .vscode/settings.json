@@ -1,4 +1,7 @@
 {
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false
 }
