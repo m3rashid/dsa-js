@@ -17,7 +17,7 @@
 	"bugs": {
 		"url": "https://github.com/m3rashid/dsa-js/issues"
 	},
-	"homepage": "https://m3rashid.github.io/dsa-js",
+	"homepage": "https://dsajs.m3rashid.in",
 	"scripts": {
 		"dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
 		"postinstall": "cd docs && yarn",
